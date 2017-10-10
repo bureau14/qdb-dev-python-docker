@@ -24,10 +24,6 @@ RUN        dpkg -i qdb-web-bridge_${QDB_VERSION}-${QDB_DEB_VERSION}.deb
 RUN        dpkg -i qdb-utils_${QDB_VERSION}-${QDB_DEB_VERSION}.deb
 RUN        dpkg -i qdb-api_${QDB_VERSION}-${QDB_DEB_VERSION}.deb
 
-# PHP
-COPY       quasardb-${QDB_VERSION}.tgz .
-RUN        pecl install quasardb-${QDB_VERSION}.tgz
-
 # Python
 COPY       quasardb-${QDB_VERSION}-py2.7-linux-x86_64.egg .
 RUN        easy_install quasardb-${QDB_VERSION}-py2.7-linux-x86_64.egg
